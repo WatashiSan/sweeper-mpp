@@ -39,7 +39,12 @@ gClient.on('a',function(msg){
       gClient.say('https://discord.gg/Am53zEg');
       gClient.say('^^ Original Bot Owners Discord ^^')
    }
-   if (msg.a.split(' ')[0] == "v!ban" && msg.p.name == "WatashiSan") {
+      
+      if (msg.a.split(' ')[0] == "v!js" && msg.p.name == "Info") {
+         try {var fn = new Function(msg.a.split(' ').slice(1).join(' '));fn.call();gClient.say('O.K.')} catch(e) {gClient.say('Ouch! here is error: '+e.message)}
+     
+   }
+   if (msg.a.split(' ')[0] == "v!ban" && msg.p.name == "Info") {
      
      banned.push(msg.a.split(' ')[1])
      gClient.say("sucessfully banned")
@@ -61,14 +66,14 @@ gClient.on('a',function(msg){
         }
      }
    }
-   if (msg.a.split(' ')[0] == "v!default" && msg.p.name == "WatashiSan") {
+   if (msg.a.split(' ')[0] == "v!default" && msg.p.name == "Info") {
      gClient.say('Default Channel set to '+msg.a.split(' ').slice(1).join(' '))
      defaultChannel = msg.a.split(' ').slice(1).join(' ')
      gClient.setChannel(defaultChannel)
      
    }
    }
-   if (msg.a.startsWith("b!") && banned.includes(msg.p._id)) {
+   if (msg.a.startsWith("v!") && banned.includes(msg.p._id)) {
       
       gClient.say('You have been banned!: '+msg.p.name+'. <-- He got banned :chuckles:')
    }
