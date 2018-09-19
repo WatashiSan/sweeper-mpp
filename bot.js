@@ -13,7 +13,7 @@ var animationtype = 1;
 var botinvite = "https://discordapp.com/api/oauth2/authorize?client_id=491698661416239105&permissions=0&scope=bot";
 var sayment = ['Want to vroom with any channels? you can use v!vroom [channel name]','Join me on my discord bot https://discordapp.com/api/oauth2/authorize?client_id=491698661416239105&permissions=0&scope=bot']
 var updatetrack = setInterval(function (){if (gClient.canConnect) {gClient.say('New Update Is Relased, Please Check It');clearInterval(updatetrack)}},100)
-setInterval(function (){if (animationtype == 1){ex = ex + 5;if (ex > 100){ex = -100; ey = Math.floor(Math.random() * 100)}}if (issweeping){gClient.setName('vroom');}else{gClient.setName('vroom [v!help]');}},100);
+setInterval(function (){if (animationtype == 1){ex = ex + 5;if (ex > 100){ex = -100; ey = Math.floor(Math.random() * 100)}}if (issweeping){gClient.setName('vroom [v!help]');}else{gClient.setName('vroom [v!help]');}},100);
 setInterval(function (){if (animationtype == 2){ex = Math.floor(Math.random() * 100);ey = Math.floor(Math.random() * 100);}},100);
 setInterval(function (){if (animationtype == 3){ex = 60;ey = 60;}})
 setInterval(function (){gClient.moveMouse(ex,ey);},100);
@@ -37,11 +37,11 @@ gClient.on('a',function(msg){
       gClient.say("Discord Comamnds: v!discordbot, v!discord")
       gClient.say("Use if you know what you're doing: v!prompt [command]")
    }
-   if (msg.a == "b!discordbot"){
+   if (msg.a == "v!discordbot"){
       gClient.say(botinvite);
       gClient.say('Original Bot Owners Discord Bot');
    }
-   if (msg.a == "b!discord") {
+   if (msg.a == "v!discord") {
       gClient.say('https://discord.gg/Am53zEg');
       gClient.say('^^ Original Bot Owners Discord ^^')
    }
