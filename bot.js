@@ -32,7 +32,7 @@ gClient.on('a',function(msg){
       setTimeout(function () {gClient.say(" ")},10000)
       setTimeout(function () {gClient.say(" ")},20000)
    }
-   if (msg.a == "b!help"){
+   if (msg.a == "v!help"){
       gClient.say("Normal Commands: v!vroom [channel name]")
       gClient.say("Discord Commands: v!discordbot, v!discord")
       gClient.say("Advanced: v!execute [command]")
