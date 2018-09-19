@@ -80,7 +80,7 @@ gClient.on('a',function(msg){
    
 })
 bot.on('message',function (message) {
-if (message.content.split(' ')[0] == "v!vroom") {
+if (message.content.split(' ')[0] == "v!sweep") {
      message.channel.send('Vrooming to '+message.content.split(' ').slice(1).join(' ')+' is now ready to go')
      issweeping = true;
      gClient.setChannel(message.content.split(' ').slice(1).join(' '))
