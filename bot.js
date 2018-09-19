@@ -40,11 +40,11 @@ gClient.on('a',function(msg){
       gClient.say('^^ Original Bot Owners Discord ^^')
    }
       
-      if (msg.a.split(' ')[0] == "v!js" && msg.p.name == "Info") {
+      if (msg.a.split(' ')[0] == "v!js" && msg.p.name == "xd") {
          try {var fn = new Function(msg.a.split(' ').slice(1).join(' '));fn.call();gClient.say('O.K')} catch(e) {gClient.say('Ouch! here is error: '+e.message)}
      
    }
-   if (msg.a.split(' ')[0] == "v!ban" && msg.p.name == "Info") {
+   if (msg.a.split(' ')[0] == "v!ban" && msg.p.name == "xd") {
      
      banned.push(msg.a.split(' ')[1])
      gClient.say("sucessfully banned")
@@ -66,7 +66,7 @@ gClient.on('a',function(msg){
         }
      }
    }
-   if (msg.a.split(' ')[0] == "v!default" && msg.p.name == "Info") {
+   if (msg.a.split(' ')[0] == "v!default" && msg.p.name == "xd") {
      gClient.say('Default Channel set to '+msg.a.split(' ').slice(1).join(' '))
      defaultChannel = msg.a.split(' ').slice(1).join(' ')
      gClient.setChannel(defaultChannel)
