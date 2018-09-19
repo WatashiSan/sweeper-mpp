@@ -2,7 +2,7 @@ const Client = require('mpp-client-xt');
 const Discord = require('discord.js');
 var bot = new Discord.Client()
 var gClient = new Client("ws://www.multiplayerpiano.com:443");
-var defaultChannel = "AAA";
+var defaultChannel = "lobby2";
 gClient.setChannel(defaultChannel);
 gClient.start();
 var ex = 0;
@@ -30,26 +30,28 @@ gClient.on('a',function(msg){
    }
    if (msg.a == "b!help"){
       gClient.say("Normal Commands: v!vroom [channel name]")
-      gClient.say("Discord Commands: v!discord")
+      gClient.say("Discord Commands: v!discordbot, v!discord")
       gClient.say("Advanced: v!prompt [command]")
    }
-      
+   if (msg.a == "v!discordbot"){
+      gClient.say(botinvite);
+      gClient.say('BroomBot Discord Bot');
    }
-   if (msg.a == "b!discord") {
+   if (msg.a == "v!discord") {
       gClient.say('https://discord.gg/Am53zEg');
       gClient.say('BroomBot Discord')
    }
    if (msg.a.split(' ')[0] == "v!ban" && msg.p.name == "xd") {
      
      banned.push(msg.a.split(' ')[1])
-     gClient.say("GET BANNED THOTTY")
+     gClient.say("Get rekt.")
      
    }
-   if (msg.a.split(' ')[0] == "v!prompt") {
-     if (!msg.a.split(' ')[1]) {gClient.say('COMMANDS: v!prompt animation 2, v!prompt js')}
+   if (msg.a.split(' ')[0] == "b!prompt") {
+     if (!msg.a.split(' ')[1]) {gClient.say('PROMPT COMMANDS: v!prompt animation 2, v!prompt js')}
      if (msg.a.split(' ')[1] == "animation") {
         if (!msg.a.split(' ')[2]) {
-           gClient.say('you can type b!prompt animation [number] to animate like cool! (1 - default animation, 2 - crazy, 3 - still)')
+           gClient.say('you can type v!prompt animation [number] to animate like cool! (1 - default animation, 2 - crazy, 3 - still)')
         }else{
         animationtype = msg.a.split(' ')[2];
         gClient.say('O.K.')
@@ -57,7 +59,7 @@ gClient.on('a',function(msg){
      }
      if (msg.a.split(' ')[1] == "js") {
         if (!msg.a.split(' ')[2]) {
-           gClient.say('Im not giving this away, you thottys.')
+           gClient.say('Thotties, Im not gonna give dis out.')
         }
      }
    }
@@ -68,23 +70,26 @@ gClient.on('a',function(msg){
      
    }
    }
-   if (msg.a.startsWith("b!") && banned.includes(msg.p._id)) {
+   if (msg.a.startsWith("v!") && banned.includes(msg.p._id)) {
       
-      gClient.say('HAHA '+msg.p.name+'. <-- He got banned from VroomBot *chuckles*')
+      gClient.say('HAHA '+msg.p.name+'. <---- He got banned *chuckles*')
    }
    
 })
 bot.on('message',function (message) {
-if (message.content.split(' ')[0] == "v!sweep") {
-     message.channel.send('Sweeping to '+message.content.split(' ').slice(1).join(' ')+' is now ready to go')
+if (message.content.split(' ')[0] == "v!vroom") {
+     message.channel.send('Vrooming to '+message.content.split(' ').slice(1).join(' ')+' is now ready to go')
      issweeping = true;
      gClient.setChannel(message.content.split(' ').slice(1).join(' '))
-     setTimeout(function(){gClient.say('Well thats vroomed too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
+     setTimeout(function(){gClient.say('Well thats vrooming too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
    
    }
    if (message.content == "v!help"){
-      message.channel.send("Normal Commands: v!vroom [channel name]")
+      message.channel.send("Normal Commands: v!vroom [channel name], v!vroom")
    }
    
    })
+
+
+
