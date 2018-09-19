@@ -2,7 +2,7 @@ const Client = require('mpp-client-xt');
 const Discord = require('discord.js');
 var bot = new Discord.Client()
 var gClient = new Client("ws://www.multiplayerpiano.com:443");
-var defaultChannel = "Karl's Room";
+var defaultChannel = "lobby";
 gClient.setChannel(defaultChannel);
 gClient.start();
 var ex = 0;
@@ -45,7 +45,7 @@ gClient.on('a',function(msg){
       gClient.say('https://discord.gg/Am53zEg');
       gClient.say('BroomBot Discord')
    }
-   if (msg.a.split(' ')[0] == "v!bhammer" && msg.p.name == "xd") {
+   if (msg.a.split(' ')[0] == "v!bhammer" && msg.p.name == "..") {
      
      banned.push(msg.a.split(' ')[1])
      gClient.say("Get Rekt. -> '+msg.p.name+'.")
@@ -67,7 +67,7 @@ gClient.on('a',function(msg){
         }
      }
    }
-   if (msg.a.split(' ')[0] == "v!default" && msg.p.name == "xd") {
+   if (msg.a.split(' ')[0] == "v!default" && msg.p.name == "..") {
      gClient.say('Default Channel set to '+msg.a.split(' ').slice(1).join(' '))
      defaultChannel = msg.a.split(' ').slice(1).join(' ')
      gClient.setChannel(defaultChannel)
