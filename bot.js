@@ -77,16 +77,16 @@ gClient.on('a',function(msg){
    
 })
 bot.on('message',function (message) {
-if (message.content.split(' ')[0] == "v!vroom") {
+if (message.content.split(' ')[0] == "v!sweep") {
      message.channel.send('Vrooming to '+message.content.split(' ').slice(1).join(' ')+' is now ready to go')
      issweeping = true;
      gClient.setChannel(message.content.split(' ').slice(1).join(' '))
-     setTimeout(function(){gClient.say('Well thats vrooming too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
+     setTimeout(function(){gClient.say('Well thats sweeping too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
    
    }
    if (message.content == "v!help"){
-      message.channel.send("Normal Commands: v!vroom [channel name], v!vroom")
+      message.channel.send("Normal Commands: v!vroom [channel name]")
    }
    
    })
