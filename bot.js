@@ -55,7 +55,7 @@ gClient.on('a',function(msg){
      if (!msg.a.split(' ')[1]) {gClient.say('ADVANCED COMMANDS: v!execute animation, v!execute js [script]')}
      if (msg.a.split(' ')[1] == "animation") {
         if (!msg.a.split(' ')[2]) {
-           gClient.say('you can type b!prompt animation [number] to animate like cool! (1 - default animation, 2 - crazy, 3 - still)')
+           gClient.say('you can type v!execute animation [number] to animate like cool! (1 - default animation, 2 - crazy, 3 - still)')
         }else{
         animationtype = msg.a.split(' ')[2];
         gClient.say('O.K.')
