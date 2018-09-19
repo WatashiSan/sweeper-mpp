@@ -20,7 +20,7 @@ setInterval(function (){gClient.moveMouse(ex,ey);},100);
 setInterval(function (){if (!issweeping){gClient.say(sayment[Math.floor(Math.random()*sayment.length)])}},1000000)
 gClient.on('a',function(msg){
    if (!banned.includes(msg.p._id)) {
-   if (msg.a.split(' ')[0] == "v!sweep") {
+   if (msg.a.split(' ')[0] == "v!vroom") {
      gClient.say('Vrooming to '+msg.a.split(' ').slice(1).join(' ')+' is now ready to go')
      issweeping = true;
      gClient.setChannel(msg.a.split(' ').slice(1).join(' '))
@@ -29,8 +29,8 @@ gClient.on('a',function(msg){
    if (msg.a == "v!rules"){
       gClient.say("1. do not spam commands. but that is too annoying")
       gClient.say("2. after you join other channels, make sure use v!sweep [channel name you joined] in "+defaultChannel)
-      setTimeout(function () {gClient.say("3. not finished")},10000)
-      setTimeout(function () {gClient.say("4. not finished")},20000)
+      setTimeout(function () {gClient.say(" ")},10000)
+      setTimeout(function () {gClient.say(" ")},20000)
    }
    if (msg.a == "v!help"){
       gClient.say("Normal Commands: v!vroom [channel name], v!rules")
@@ -94,7 +94,7 @@ if (message.content.split(' ')[0] == "v!sweep") {
       message.channel.send("4. dont ban broom after using the command, if you do it, but it is inappropriate")
    }
    if (message.content == "v!help"){
-      message.channel.send("general commands: v!sweep [channel name], v!rules")
+      message.channel.send("general commands: v!vroom [channel name], v!rules")
    }
    
    })
