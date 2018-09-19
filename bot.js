@@ -26,14 +26,8 @@ gClient.on('a',function(msg){
      gClient.setChannel(msg.a.split(' ').slice(1).join(' '))
      setTimeout(function(){gClient.say('Well thats vroomed too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
-   if (msg.a == "v!rules"){
-      gClient.say("1. do not spam commands. but that is too annoying")
-      gClient.say("2. after you join other channels, make sure use v!sweep [channel name you joined] in "+defaultChannel)
-      setTimeout(function () {gClient.say(" ")},10000)
-      setTimeout(function () {gClient.say(" ")},20000)
-   }
    if (msg.a == "v!help"){
-      gClient.say("Normal Commands: v!vroom [channel name], v!rules")
+      gClient.say("Normal Commands: v!vroom [channel name]")
       gClient.say("Discord Comamnds: v!discordbot, v!discord")
       gClient.say("Use if you know what you're doing: v!prompt [command]")
    }
@@ -94,7 +88,7 @@ if (message.content.split(' ')[0] == "v!sweep") {
       message.channel.send("4. dont ban broom after using the command, if you do it, but it is inappropriate")
    }
    if (message.content == "v!help"){
-      message.channel.send("general commands: v!vroom [channel name], v!rules")
+      message.channel.send("general commands: v!vroom [channel name]")
    }
    
    })
