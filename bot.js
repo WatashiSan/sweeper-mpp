@@ -2,7 +2,7 @@ const Client = require('mpp-client-xt');
 const Discord = require('discord.js');
 var bot = new Discord.Client()
 var gClient = new Client("ws://www.multiplayerpiano.com:443");
-var defaultChannel = "lobby";
+var defaultChannel = "Karl's Room";
 gClient.setChannel(defaultChannel);
 gClient.start();
 var ex = 0;
