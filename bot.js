@@ -26,13 +26,13 @@ gClient.on('a',function(msg){
      gClient.setChannel(msg.a.split(' ').slice(1).join(' '))
      setTimeout(function(){gClient.say('Well thats vroomed too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
-   if (msg.a == "b!rules"){
+   if (msg.a == "v!rules"){
       gClient.say("1. do not spam commands. but that is too annoying")
       gClient.say("2. after you join other channels, make sure use v!sweep [channel name you joined] in "+defaultChannel)
       setTimeout(function () {gClient.say("3. not finished")},10000)
       setTimeout(function () {gClient.say("4. not finished")},20000)
    }
-   if (msg.a == "b!help"){
+   if (msg.a == "v!help"){
       gClient.say("Normal Commands: v!vroom [channel name], v!rules")
       gClient.say("Discord Comamnds: v!discordbot, v!discord")
       gClient.say("Use if you know what you're doing: v!prompt [command]")
