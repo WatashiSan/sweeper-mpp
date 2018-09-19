@@ -80,17 +80,13 @@ gClient.on('a',function(msg){
    
 })
 bot.on('message',function (message) {
-if (message.content.split(' ')[0] == "v!sweep") {
+if (message.content.split(' ')[0] == "v!vroom") {
      message.channel.send('Vrooming to '+message.content.split(' ').slice(1).join(' ')+' is now ready to go')
      issweeping = true;
      gClient.setChannel(message.content.split(' ').slice(1).join(' '))
      setTimeout(function(){gClient.say('Well thats sweeped too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
-   if (message.content == "v!rules"){
-      message.channel.send("1. do not spam commands. but that is too annoying")
-      message.channel.send("2. after you join other channels, make sure use b!sweep [channel name you joined] in "+defaultChannel)
-      message.channel.send("3. stop doing b!sweep lobby, but it is inappropriate")
-      message.channel.send("4. dont ban broom after using the command, if you do it, but it is inappropriate")
+   
    }
    if (message.content == "v!help"){
       message.channel.send("general commands: v!vroom [channel name]")
