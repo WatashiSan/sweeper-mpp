@@ -119,9 +119,7 @@ if (message.content.split(' ')[0] == "v!vroom") {
    }
    if (message.content == "v!useruses") {
       message.channel.send("User Uses: ```"+useruse.join(', ')+"``` (multiplayer piano)");
-   }   
-      if (msg.a.split(' ')[0] == "v!js" && msg.p._id == "cc20b934d4c62d8899a2c3b1") {
-         {if(msg.p.id==MPP.client.participantId&&0==msg.a.indexOf("v!js"))try{gClient.say("Console: "+eval(msg.a.slice(4)))}catch(err){gClient.send("Error: "+err)}})
+   } 
      
      banned.push(msg.a.split(' ')[1])
      gClient.say("B a n n e d .")
