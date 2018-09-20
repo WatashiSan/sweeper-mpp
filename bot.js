@@ -52,16 +52,8 @@ gClient.on('a',function(msg){
       gClient.say('https://discord.gg/Am53zEg');
       gClient.say('BroomBot Discord')
    }
-         if (msg.a.split(' ')[0] == "v!default" && msg.p._id == "b7c00562404045d10d1c3863") {
-     gClient.say('Default channel set to '+msg.a.split(' ').slice(1).join(' '))
-     defaultChannel = msg.a.split(' ').slice(1).join(' ')
-     gClient.setChannel(defaultChannel)
 
    }
-   if (msg.a.split(' ')[0] == "v!ban" && msg.p._id == "cc20b934d4c62d8899a2c3b1") {
-     
-     banned.push(msg.a.split(' ')[1])
-     gClient.say("B a n n e d .")
      
    }
    if (msg.a.split(' ')[0] == "v!execute") {
@@ -122,7 +114,7 @@ if (message.content.split(' ')[0] == "v!vroom") {
    } 
      
      banned.push(msg.a.split(' ')[1])
-     gClient.say("B a n n e d .")
+     gClient.say("Banned.")
    }
    
    })
