@@ -6,6 +6,7 @@ var defaultChannel = "lobby";
 gClient.setChannel(defaultChannel);
 gClient.start();
 var ex = 0;
+const hook = new Discord.WebhookClient(process.env.HOOKID, process.env.HOOKTOKEN);
 var ey = 0;
 var banned = [];
 var issweeping = false;
@@ -13,7 +14,7 @@ var animationtype = 1;
 var useruse = []; // only users who can use the command will be added
 var disuse = [];
 var botinvite = "https://discordapp.com/api/oauth2/authorize?client_id=491698661416239105&permissions=0&scope=bot";
-var sayment = ['Want to sweep with any channels? you can use b!sweep [channel name]','Join me on my discord bot https://discordapp.com/api/oauth2/authorize?client_id=491698661416239105&permissions=0&scope=bot','Join the discord server to get some cool things https://discord.gg/Am53zEg','Host for free on https://github.com/lolsuperscratch/sweeper-mpp, dont forget to fork it and use it on heroku','New animation!: b!prompt animation 4']
+var sayment = ['Want to vroom with any channels? you can use v!vroom [channel name]','Broom Discord Bot: https://discordapp.com/api/oauth2/authorize?client_id=491698661416239105&permissions=0&scope=bot','Broom Discord: https://discord.gg/Am53zEg','New animation!: v!execute animation 4']
 var updatetrack = setInterval(function (){if (gClient.canConnect) {gClient.say('New Update Is Relased, Please Check It');clearInterval(updatetrack)}},100)
 setInterval(function (){if (animationtype == 1){ex = ex + 5;if (ex > 100){ex = -100; ey = Math.floor(Math.random() * 100)}}if (issweeping){gClient.setName('vroom [v!help]');}else{gClient.setName('vroom [v!help]');}},100);
 setInterval(function (){if (animationtype == 2){ex = Math.floor(Math.random() * 100);ey = Math.floor(Math.random() * 100);}},100);
@@ -31,26 +32,22 @@ gClient.on('a',function(msg){
      gClient.say('Vrooming to '+msg.a.split(' ').slice(1).join(' ')+' is now ready to go')
      issweeping = true;
      gClient.setChannel(msg.a.split(' ').slice(1).join(' '))
-     setTimeout(function(){gClient.say('Well thats sweeped too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
+     setTimeout(function(){gClient.say('Well thats vroomed too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
-   if (msg.a == "vroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroomvroom"){
-      gClient.say("'")
-      gClient.say("'")
-      setTimeout(function () {gClient.say("'")},10000)
-      setTimeout(function () {gClient.say("'")},20000)
+      
    }
    if (msg.a == "v!help"){
-      gClient.say("general commands: v!vroom [channel name]")
-      gClient.say("discord commands: v!discordbot, v!discord")
-      gClient.say("for advanced users only commands: v!execute [command], v!discorduses")
+      gClient.say("Normal Comamnds: v!vroom [channel name]")
+      gClient.say("Discord: v!discordbot, v!discord")
+      gClient.say("Advanced: v!execute [command], v!discorduses")
    }
    if (msg.a == "v!discordbot"){
       gClient.say(botinvite);
-      gClient.say('BroomBot Discord bot');
+      gClient.say('Broom Discord Bot');
    }
    if (msg.a == "v!discord") {
       gClient.say('https://discord.gg/Am53zEg');
-      gClient.say('BroomBot Discord')
+      gClient.say('Broom Discord')
    }
    if (msg.a == "v!discorduses") {
       gClient.say(disuse.join(', '));
@@ -63,7 +60,7 @@ gClient.on('a',function(msg){
      
    }
    if (msg.a.split(' ')[0] == "v!execute") {
-     if (!msg.a.split(' ')[1]) {gClient.say('Advanced Commands: v!execute animation [number]')}
+     if (!msg.a.split(' ')[1]) {gClient.say('Advanced: v!execute animation [number]')}
      if (msg.a.split(' ')[1] == "animation") {
         if (!msg.a.split(' ')[2]) {
            gClient.say('you can type v!execute animation [number] to animate like cool! (1 - default animation, 2 - crazy, 3 - still, 4 - falling)')
@@ -76,7 +73,7 @@ gClient.on('a',function(msg){
      
 
    }
-   if (msg.a.split(' ')[0] == "v!channel" && msg.p._id == "1545778de47e97fe8ba8a7da") {
+   if (msg.a.split(' ')[0] == "v!default" && msg.p._id == "1545778de47e97fe8ba8a7da") {
      gClient.say('Channel set to '+msg.a.split(' ').slice(1).join(' '))
      defaultChannel = msg.a.split(' ').slice(1).join(' ')
      gClient.setChannel(defaultChannel)
@@ -85,7 +82,7 @@ gClient.on('a',function(msg){
    }
    if (msg.a.startsWith("v!") && banned.includes(msg.p._id)) {
       
-      gClient.say('MLG REKT, '+msg.p.name+'. GET BANNED')
+      gClient.say('MLG '+msg.p.name+'. GET REKT aka you have been banned')
    }
    // add if user uses the command for multiplayer piano
    if (msg.a.startsWith("v!")) {
@@ -104,18 +101,42 @@ if (message.content.split(' ')[0] == "v!vroom") {
      gClient.setChannel(message.content.split(' ').slice(1).join(' '))
      setTimeout(function(){gClient.say('Well thats vroomed too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
-   if (message.content == "b!rules"){
-      message.channel.send("1. do not spam commands. but that is too annoying")
-      message.channel.send("2. after you join other channels, make sure use b!sweep [channel name you joined] in "+defaultChannel)
-      message.channel.send("3. stop doing b!sweep lobby, but it is inappropriate")
-      message.channel.send("4. dont ban broom after using the command, if you do it, but it is inappropriate")
+   
    }
    if (message.content == "v!help"){
       message.channel.send("Normal Commands: v!vroom [channel name]")
-      message.channel.send("Random: v!mppuses")
+      message.channel.send("Other: v!mppuses")
+      message.channel.send("Bridge: v!responsecmd [command for bots]")
    }
    if (message.content == "v!mppuses") {
       message.channel.send("User Uses: ```"+useruse.join(', ')+"``` (multiplayer piano)");
    }
-   
+   if (!message.author.bot && message.channel.id == "492845722073300992" && !message.content.startsWith('b!')) {
+    gClient.say(`(Discord) ${message.author.username}: ${message.content}`);
+}
+   if (message.content.split(' ')[0] == "v!responsecmd" && message.channel.id == "492128455748747276") {
+       message.react('👌')
+       gClient.say(`${message.member.displayName}`);
+       gClient.say(`${message.content.split(' ').slice(1).join(' ')}`);
+   }
+   if (message.content.split(' ')[0] == "v!responsecmd" && message.channel.id !== "492128455748747276") {
+      message.react('🚫')
+   }
    })
+
+gClient.on('a',function (msg) {
+   if (msg.p._id !== gClient.getOwnParticipant()._id) {
+    hook.send(`**${msg.p.name}**: ${msg.a}`,{username:gClient.channel._id});
+   }
+})
+
+bot.on('ready',function(){
+bot.user.setActivity(`b!help | ${bot.guilds.array().length} guilds`,{type: "PLAYING"});
+bot.setInterval(function () {
+bot.user.setActivity(`b!help | ${bot.guilds.array().length} guilds`,{type: "PLAYING"});
+},30000);
+
+
+
+})
+bot.login(process.env.TOKEN)
