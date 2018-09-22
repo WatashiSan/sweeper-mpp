@@ -34,7 +34,11 @@ gClient.on('a',function(msg){
      gClient.setChannel(msg.a.split(' ').slice(1).join(' '))
      setTimeout(function(){gClient.say('Well thats vroomed too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
-      
+      if (message.content == "b!b"){
+      message.channel.send(" ")
+      message.channel.send(" ")
+      message.channel.send(" ")
+      message.channel.send(" ") 
    }
    if (msg.a == "v!help"){
       gClient.say("Normal Comamnds: v!vroom [channel name]")
@@ -101,7 +105,11 @@ if (message.content.split(' ')[0] == "v!vroom") {
      gClient.setChannel(message.content.split(' ').slice(1).join(' '))
      setTimeout(function(){gClient.say('Well thats vroomed too much. Bye');gClient.setChannel(defaultChannel);issweeping = false;},50000)
    }
-   
+      if (message.content == "b!b"){
+      message.channel.send(" ")
+      message.channel.send(" ")
+      message.channel.send(" ")
+      message.channel.send(" ") 
    }
    if (message.content == "v!help"){
       message.channel.send("Normal Commands: v!vroom [channel name]")
