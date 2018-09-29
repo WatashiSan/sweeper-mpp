@@ -1,7 +1,7 @@
 const Client = require('mpp-client-xt');
 const Discord = require('discord.js');
 var bot = new Discord.Client()
-var gClient = new Client("ws://www.multiplayerpiano.com:443");
+var gClient = new Client("ws://www.multiplayerpiano.com:8080");
 var defaultChannel = "lobby";
 gClient.setChannel(defaultChannel);
 gClient.start();
@@ -14,9 +14,9 @@ var animationtype = 1;
 var useruse = []; // only users who can use the command will be added
 var disuse = [];
 var botinvite = "https://discordapp.com/api/oauth2/authorize?client_id=491698661416239105&permissions=0&scope=bot";
-var sayment = ['Want to vroom with any channels? you can use v!vroom [channel name]','Broom Discord Bot: https://discordapp.com/api/oauth2/authorize?client_id=491698661416239105&permissions=0&scope=bot','Broom Discord: https://discord.gg/Am53zEg','New animation!: v!execute animation 4']
+var sayment = ['Want to vroom with any channels? you can use v!vroom [channel name]']
 var updatetrack = setInterval(function (){if (gClient.canConnect) {gClient.say('New Update Is Relased, Please Check It');clearInterval(updatetrack)}},100)
-setInterval(function (){if (animationtype == 1){ex = ex + 5;if (ex > 100){ex = -100; ey = Math.floor(Math.random() * 100)}}if (issweeping){gClient.setName('vroom [v!help]');}else{gClient.setName('vroom [v!help]');}},100);
+setInterval(function (){if (animationtype == 1){ex = ex + 5;if (ex > 100){ex = -100; ey = Math.floor(Math.random() * 100)}}if (issweeping){gClient.setName('vroom [v!vroom]');}else{gClient.setName('vroom [v!vroom]');}},100);
 setInterval(function (){if (animationtype == 2){ex = Math.floor(Math.random() * 100);ey = Math.floor(Math.random() * 100);}},100);
 setInterval(function (){if (animationtype == 3){ex = 60;ey = 60;}})
 setInterval(function (){if (useruse.length > 8) {useruse.pop()}})
